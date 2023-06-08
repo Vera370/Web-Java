@@ -2,6 +2,8 @@
 
 #### 1、安装node
 
+Ubuntu换源：清华源镜像--使用帮助--Ubuntu--按使用帮助修改文件（vim，注释原有内容，添加新内容）
+
 apt install npm
 
 npm install -g n
@@ -10,7 +12,7 @@ npm install -g n
 
 查看版本：node -v&#x20;
 
-\*使用该命令可默认下载最新版nodejs
+\*使用该命令（下载npm和n）可默认下载最新版nodejs
 
 #### 2、第一个Vue页面
 
@@ -30,5 +32,29 @@ Vue页面包含了HTML、JavaScript、CSS三种语言的集合：
 <style scoped>防止其他语言对气其干扰
 ```
 
+#### 3、安装Element Plus
 
+Vue相当于网页的整体框架，使用Element为其添加组件
 
+安装：
+
+```
+npm install element-plus --save
+```
+
+导入：在main.ts文件中插入以下代码中缺少的部分
+
+```
+// main.ts
+import { createApp } from 'vue'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import App from './App.vue'
+
+const app = createApp(App)
+
+app.use(ElementPlus)
+app.mount('#app')
+```
+
+至此，便可在App页面中添加组件，点击链接即可显示
