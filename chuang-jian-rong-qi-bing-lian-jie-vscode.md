@@ -23,7 +23,7 @@ docker start containname
 #### 4、在运行的容器中执行命令
 
 ```
-docker exec -i -t containname
+docker exec -i -t containname /bin/bash
 ```
 
 进入容器伪终端，执行命令对容器进行从操作
