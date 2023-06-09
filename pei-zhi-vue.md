@@ -22,11 +22,11 @@ Hello文件和Welcome文件是App中的左右两部分子内容（分块设计�
 
 Vue页面包含了HTML、JavaScript、CSS三种语言的集合：
 
-\<style>中为css；
+\<style>中为css，描述网页布局；
 
-\<template>中为html；
+\<template>中为html，定义网页内容；
 
-\<script>中为JavaScript；
+\<script>中为JavaScript，控制网页行为；
 
 ```vue
 <style scoped>防止其他语言对气其干扰
@@ -57,4 +57,10 @@ app.use(ElementPlus)
 app.mount('#app')
 ```
 
-至此，便可在App页面中添加组件，点击链接即可显示
+至此，便可在App页面中添加组件
+
+4、运行
+
+进入项目所在目录：cd 目录
+
+运行项目：npm run dev
