@@ -59,8 +59,82 @@ app.mount('#app')
 
 至此，便可在App页面中添加组件
 
-4、运行
+#### 4、运行
 
 进入项目所在目录：cd 目录
 
 运行项目：npm run dev
+
+#### 5、latest(3.3.2)版本的vue存在的问题
+
+设计页面默认水平尺垂直居中对齐，使用Element plus的layout布局时左侧存在留白无法消除
+
+改用3.2.47版本
+
+配置文件：\
+package.json文件
+
+```
+{
+  "name": "qhubl",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host=0.0.0.0 --port=5173",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "@popperjs/core": "^2.11.7",
+    "@types/echarts": "^4.9.17",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.2.3",
+    "echarts": "^5.4.2",
+    "element-plus": "^2.3.1",
+    "vue": "^3.2.47",
+    "vue-echarts": "^6.5.5",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.2",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/tsconfig": "^0.1.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "~4.8.4",
+    "vite": "^4.1.4",
+    "vue-tsc": "^1.2.0"
+  }
+}
+```
+
+src/main.ts文件
+
+```
+import { createApp } from 'vue'
+import App from './App.vue'
+// import router from './router'
+
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+// import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
+
+const app = createApp(App)
+
+// for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+//     app.component(key, component)
+//   }
+// app.use(router)
+app.use(ElementPlus)
+
+app.mount('#app')
+```
+
+npm install
+
+npm run dev
