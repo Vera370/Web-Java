@@ -17,13 +17,13 @@ docker run --network=host --name mynginx -it  -d nginx:latest
 容器中运行数据库
 
 ```
-server mysql start
+service mysql start
 ```
 
 查看数据库状态
 
 ```
-server mysql status
+service mysql status
 ```
 
 连接到数据库，输入命令和密码
